@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Plots</title>
+</head>
+<body>
+    <h1>Loan Data Visualizations</h1>
+    <!-- Display your plots here -->
+    {% for plot in plots %}
+        <img src="data:image/png;base64,{{ plot }}" alt="plot">
+    {% endfor %}
+</body>
+</html>
