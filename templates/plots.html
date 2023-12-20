@@ -7,7 +7,6 @@
 </head>
 <body>
     <h1>Loan Data Visualizations</h1>
-    <!-- Display your plots here -->
     {% for plot in plots %}
         <img src="data:image/png;base64,{{ plot }}" alt="plot">
     {% endfor %}
