@@ -43,11 +43,11 @@ def data_plots():
     plots = []
 
     for i in cat_cols.columns:
-        # Create subplots
+        
         default_rate2=df.groupby(i)['Status'].mean().reset_index()
         fig, axes = plt.subplots(1, 3, figsize=(14, 5))
 
-        # Countplot
+      
         sns.lineplot(x=cat_cols[i].value_counts().sort_index().index, y=cat_cols[i].value_counts().values,palette='husl', linestyle='-', color='b',marker='o', ax=axes[0])
         axes[0].set_title(f"Count of {i}")
         axes[0].set_xlabel(i)
@@ -55,7 +55,7 @@ def data_plots():
         axes[0].tick_params(axis='x', rotation=60)
         axes[0].grid()
 
-        # Barplot showing counts
+       
         sns.barplot(x=cat_cols[i].value_counts().sort_index().index, y=cat_cols[i].value_counts().values,palette='magma', ax=axes[1])
         axes[1].set_title(f"Count of {i}")
         axes[1].set_xlabel(i)
@@ -70,7 +70,7 @@ def data_plots():
         axes[2].tick_params(axis='x', rotation=60)
         axes[2].grid()
 
-        # Adjust layout
+        
         plt.tight_layout()
         graph_html=plot_to_html_image(fig)
         plots.append(graph_html)
